@@ -1,0 +1,34 @@
+.grid-container {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(200px, auto);
+  /* row-gap: 1em;
+  column-gap: 1em; */
+  gap: 1em;
+
+}
+header{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+}
+
+.grid-container div {
+  border: 2px solid rgb(7, 43, 161);
+  font-size: 1.5em;
+  padding: 30px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.grid-item1 {
+  grid-column: 1/-1;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto
+}
