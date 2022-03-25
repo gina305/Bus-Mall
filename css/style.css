@@ -32,3 +32,15 @@ header{
   margin-left: auto;
   margin-right: auto
 }
+
+#pic1, #pic2, #pic3{
+  border: 2px dotted rgb(7, 43, 161);
+}
+
+#button{
+  display: inline-block;
+  height: 25px;
+  width: 100px;
+  margin-left: 90px;
+  
+}
