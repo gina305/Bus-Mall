@@ -44,3 +44,7 @@ header{
   margin-left: 90px;
   
 }
+
+#list{
+  display: block;
+}
