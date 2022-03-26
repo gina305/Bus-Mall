@@ -169,7 +169,8 @@ function handleClick(event){
         
         let image = productArray[i].productName;
         image = image.split('/');
-        image = image[2];
+        image = image[2].split(".");
+        image = image[0];
         let clicks = productArray[i].clicks;
         let views = productArray[i].views;
 
