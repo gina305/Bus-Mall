@@ -81,7 +81,7 @@ function myFunction(){
                       currentimage2 =image2;
                       currentimage3 =image3; 
                       
-
+                  // Calll the view tracker each image    
                   viewTracker(image1);
                   viewTracker(image2);
                   viewTracker(image3);
@@ -162,7 +162,7 @@ function handleClick(event){
     //Show voting results
     function results(){
 
-      const list = document.getElementById('list');
+      const list = document.getElementById('list');;
       
 
       for (let i = 0; i < images.length; i++) {

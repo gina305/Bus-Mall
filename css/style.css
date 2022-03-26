@@ -27,11 +27,29 @@ header{
 
 }
 
+ #div2 {
+  font-size: 1.5em;
+
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+
+}
+
 .grid-item1 {
   grid-column: 1/-1;
   justify-content: center;
   margin-left: auto;
   margin-right: auto
+}
+
+.grid-item2 {
+  border: none;
+}
+#container{
+  display: flex;
+  justify-content: center;
 }
 
 #pic1, #pic2, #pic3{
@@ -50,6 +68,7 @@ header{
 
 #list{
   display: inline;
+  float: left;
   
 }
 
@@ -57,4 +76,9 @@ header{
   height: 90%;
   width: 100%;
   border: 2px dotted rgb(7, 43, 161);
+}
+
+h1{
+  justify-content: center;
+  font-size: larger;
 }
