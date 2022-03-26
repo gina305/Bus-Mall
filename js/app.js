@@ -10,7 +10,6 @@ counter = 0;
 let images =['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','water-can.jpg','wine-glass.jpg'];
 
 
-
 //Define a Product object constructor function
 function Product(name, fileExtension = 'jpg'){
   this.productName = `./img/${name}`;
@@ -43,13 +42,16 @@ function getRandomIndex(){
  document.getElementById('pic3').addEventListener('click', handleClick);
 
 //Show product array
-console.table(productArray);
+// console.table(productArray);
 
-// let currentimage1 ='';
-// let currentimage2 ='';
-// let currentimage3 ='';
 
 let shownImages = []
+
+
+// Current images
+let currentimage1 ='';
+let currentimage2 ='';
+let currentimage3 ='';
 
 //Define function
 function myFunction(){
@@ -58,28 +60,28 @@ function myFunction(){
       let image1 = productArray[random].productName;
       let image2 = productArray[random].productName;
       let image3 = productArray[random].productName;
-      // let currentimage1 =image1;
-      // let currentimage2 =image2;
-      // let currentimage3 =image3; 
 
+                    
+                        //Choose another image if the image was show in the previous set
+                        while (currentimage1 === image1 || currentimage2 === image1 || currentimage3 === image1 || image1 === image2 || image1 === image3){
+                          random = getRandomIndex();
+                          image1 = productArray[random].productName;
+                          };
+                          while (currentimage1 === image2 || currentimage2 === image2 || currentimage3 === image2 || image2 === image3 || image1 === image2){
+                            random = getRandomIndex();
+                            image2 = productArray[random].productName;
+                            };
+                            while (currentimage1 === image3 || currentimage2 === image3 || currentimage3 === image3 || image2 === image3 || image2 === image3){
+                              random = getRandomIndex();
+                              image3 = productArray[random].productName;
+                              };
 
-      shownImages = [image1,image2,image3];
-
-      //Loop to choose another photo if either image1, image2 or image3 are the same
-          // for (let i = 0; i < shownImages.length; i++) {
-                while (image1 === image2 || image1 === image3){
-                  random = getRandomIndex();
-                  image1 = productArray[random].productName;
-                  };
-                  while (image2 === image3 || image1 === image2 ){
-                    random = getRandomIndex();
-                    image2 = productArray[random].productName;
-                  };
-                  while (image2 === image3 || image3 === image1 ){
-                    random = getRandomIndex();
-                    image3 = productArray[random].productName;
-                  };
-
+                      //Save the current images for future tracking purposes
+                      currentimage1 =image1;
+                      currentimage2 =image2;
+                      currentimage3 =image3; 
+                      
+                  // Calll the view tracker each image    
                   viewTracker(image1);
                   viewTracker(image2);
                   viewTracker(image3);
@@ -160,13 +162,12 @@ function handleClick(event){
     //Show voting results
     function results(){
 
-      const list = document.getElementById('list');
+      const list = document.getElementById('list');;
       
 
       for (let i = 0; i < images.length; i++) {
 
         //Set a few variables for display
-        
         let image = productArray[i].productName;
         image = image.split('/');
         image = image[2].split(".");
@@ -179,10 +180,12 @@ function handleClick(event){
         list.appendChild(li);
         
         li.innerHTML = `${image} had ${clicks} vote(s) and was seen ${views} time(s).`
+
+      
       
       };
-      console.table(productArray);
-  
+      // console.table(productArray);
+    chartData();
     };
 
     //Increment image view(s)
@@ -204,5 +207,90 @@ function handleClick(event){
       };
 
      
+function chartData(){
 
+  //Get chart element for display
+  const ctx = document.getElementById('chart').getContext('2d');
+  let labels = [];
+  let dataPoints = [];
+
+  for (let index = 0; index < productArray.length; index++) {
+
+    //Define & format the image name
+    let image = productArray[index].productName;
+    image = image.split('/');
+    image = image[2].split(".");
+    image = image[0];
     
+    //Define clicks and views data
+    let clicks = productArray[index].clicks;
+
+    //Push results to label and dataPoint arrays
+    labels.push(image);
+    dataPoints.push(clicks);
+  };
+
+  //Define the chart object
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+          label: '# of Votes',
+          data: dataPoints,
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+          ],
+          borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 99, 132, 1)',
+          ],
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+  // ctx.appendChild(myChart);
+
+};

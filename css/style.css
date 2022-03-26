@@ -19,10 +19,21 @@ header{
 .grid-container div {
   border: 2px solid rgb(7, 43, 161);
   font-size: 1.5em;
-  padding: 30px;
+  padding: 10px;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 90%;
+
+}
+
+ #div2 {
+  font-size: 1.5em;
+
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
 
 }
 
@@ -33,6 +44,14 @@ header{
   margin-right: auto
 }
 
+.grid-item2 {
+  border: none;
+}
+#container{
+  display: flex;
+  justify-content: center;
+}
+
 #pic1, #pic2, #pic3{
   border: 2px dotted rgb(7, 43, 161);
 }
@@ -41,10 +60,25 @@ header{
   display: inline-block;
   height: 25px;
   width: 100px;
-  margin-left: 90px;
+  margin:10px;
+  border: 2px solid rgb(7, 43, 161);
+
   
 }
 
 #list{
-  display: block;
+  display: inline;
+  float: left;
+  
+}
+
+#chart{
+  height: 90%;
+  width: 100%;
+  border: 2px dotted rgb(7, 43, 161);
+}
+
+h1{
+  justify-content: center;
+  font-size: larger;
 }
