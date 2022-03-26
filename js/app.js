@@ -1,7 +1,7 @@
 let productArray = [];
 
 // Number of voting rounds
-let rounds = 5; 
+let rounds = 25; 
 
 //Click counter
 counter = 0;
@@ -9,7 +9,7 @@ counter = 0;
 //Hold the images in an array
 let images =['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','water-can.jpg','wine-glass.jpg'];
 
-let votes = [];
+
 
 //Define a Product object constructor function
 function Product(name, fileExtension = 'jpg'){
