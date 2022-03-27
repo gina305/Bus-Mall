@@ -53,7 +53,8 @@ header{
 }
 
 #pic1, #pic2, #pic3{
-  border: 2px dotted rgb(7, 43, 161);
+  border: 2px solid rgb(7, 43, 161);
+  padding: 10px;
 }
 
 #button{

@@ -213,10 +213,12 @@ function viewTracker(a) {
   for (let index = 0; index < productArray.length; index++) {
     const product = productArray[index].productName;
 
+
     // Increment image view
     if (product === image) {
       productArray[index].views++;
     }
+
 
   };
 
@@ -227,12 +229,12 @@ function chartData() {
 
   //Get chart element for display
   const ctx = document.getElementById('chart').getContext('2d');
-  
 
- 
+  //Declare variables for use in the chart
 
   let labels = [];
   let dataPoints = [];
+  let dataPoints2 = [];
 
   for (let index = 0; index < productArray.length; index++) {
 
@@ -244,10 +246,12 @@ function chartData() {
 
     //Define clicks and views data
     let clicks = productArray[index].clicks;
+    let views = productArray[index].views;
 
     //Push results to label and dataPoint arrays
     labels.push(image);
     dataPoints.push(clicks);
+    dataPoints2.push(views);
   };
 
   //Define the chart object
@@ -300,6 +304,53 @@ function chartData() {
           'rgba(255, 159, 64, 1)',
           'rgba(255, 99, 132, 1)',
         ],
+
+      },{
+        label: '# of Views',
+        data: dataPoints2,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 99, 132, 1)',
+        ],
+
       }]
     },
     options: {
@@ -338,8 +389,8 @@ function chartData() {
   console.log("Retrieved Data" + retrievedData);
   console.log("Product array:"+  productArray);
 
-  //Reload Chart
-  document.getElementById("chart").innerHTML.reload;
+
+  
 
   };
 
