@@ -384,8 +384,6 @@ function chartData() {
   console.log("Retrieved Data" + retrievedData);
   console.log("Product array:"+  productArray);
 
-  //Reload Chart
-  // document.getElementById("chart").innerHTML.reload;
-//Updated chart
+  
   };
 
