@@ -317,33 +317,8 @@ function chartData() {
   }
 };
 
-// persistently track totals between page refreshes, so that I can keep track of the aggregate number of votes:
-  /* Local storage alllows you to store data on the system's local hardrive ( identified by IP & port). To store data locally, the values must be a string.
-  
-  * JSON.stringify - converts a JavaScript object or value to a JSON string.
-  getItem()
 
-  Make sure the data persists across both browser refreshes and resets. Retrieve the products array from local storage and then utilize the JSON.Parse() function. 
-   * JSON.parse - converts string to JSON
-
-  Tool for viewing JSON objects: https://jsonformatter.org/json-parser
-
-  Info about JSON from https://codebeautify.org/blog/json-full-form/
-
-  ### Why JSON is so Popular
-  JSON is easy to understand, read and write.
-  All languages and browsers have parser for the JSON.
-  JSON format can store any type of data such as Int, Boolean, String, Base64 String etc.
-  
-  ### Advantage of JSON data exchange format
-  Human can read it better than XML , YAML or CSV format.
-  JSON is light-weight competitor of XML.
-  JSON is Simple and efficient than other data formats.
-  It’s simple and self explanatory
-  Best and Easy to use in AJAX based JavaScript based web application
-  JSON provides flexibility for developers and it’s interoperable with other languages
-
-  */
+//Store data locally
   function storeLocally(){
     //Convert JSON object to JSON string for storage
     let stringifiedProducts = JSON.stringify(productArray);
