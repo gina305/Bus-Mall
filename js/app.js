@@ -386,6 +386,6 @@ function chartData() {
 
   //Reload Chart
   // document.getElementById("chart").innerHTML.reload;
-
+//Updated chart
   };
 
