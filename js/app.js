@@ -213,10 +213,12 @@ function viewTracker(a) {
   for (let index = 0; index < productArray.length; index++) {
     const product = productArray[index].productName;
 
+
     // Increment image view
     if (product === image) {
       productArray[index].views++;
     }
+
 
   };
 
@@ -227,8 +229,9 @@ function chartData() {
 
   //Get chart element for display
   const ctx = document.getElementById('chart').getContext('2d');
- 
+
   //Declare variables for use in the chart
+
   let labels = [];
   let dataPoints = [];
   let dataPoints2 = [];
@@ -301,6 +304,7 @@ function chartData() {
           'rgba(255, 159, 64, 1)',
           'rgba(255, 99, 132, 1)',
         ],
+
       },{
         label: '# of Views',
         data: dataPoints2,
@@ -346,6 +350,7 @@ function chartData() {
           'rgba(255, 159, 64, 1)',
           'rgba(255, 99, 132, 1)',
         ],
+
       }]
     },
     options: {
@@ -384,6 +389,8 @@ function chartData() {
   console.log("Retrieved Data" + retrievedData);
   console.log("Product array:"+  productArray);
 
+
   
+
   };
 
