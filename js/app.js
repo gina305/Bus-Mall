@@ -175,7 +175,8 @@ function handleClick(event) {
 //Show voting results
 function results() {
 
-  const list = document.getElementById('list');;
+  const list = document.getElementById('list');
+  list.innerText= 'Results:';
 
 
   for (let i = 0; i < images.length; i++) {
